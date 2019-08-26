@@ -10,7 +10,7 @@ import java.util.HashMap;
 public class ServiceDisciplinas {
 
     @Autowired
-    private HashMap<Integer, Disciplina> disciplinas;
+    private HashMap<Integer, Disciplina> disciplinas = new HashMap<>();
 
     public Disciplina addDisciplina(String nome, int id, double nota) {
 

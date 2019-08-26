@@ -10,6 +10,8 @@ public class Lab01Application {
 
 	public static void main(String[] args) {
 
+		ControllerDisciplinas controle = new ControllerDisciplinas();
+
 		SpringApplication.run(Lab01Application.class, args);
 	}
 
