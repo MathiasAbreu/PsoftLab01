@@ -1,9 +1,7 @@
-package psoft.ufcg.lab01.inicializer;
+package psoft.ufcg.lab01;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import psoft.ufcg.lab01.controllers.ControllerDisciplinas;
 
 @SpringBootApplication
 public class Lab01Application {
@@ -13,4 +11,5 @@ public class Lab01Application {
 		SpringApplication.run(Lab01Application.class, args);
 	}
 
+	//mvn spring-boot:run
 }

@@ -11,11 +11,12 @@ import psoft.ufcg.lab01.services.ServiceDisciplinas;
 public class ControllerDisciplinas {
 
     public static int idUnico = 100;
+
     @Autowired
     private ServiceDisciplinas serviceDisciplinas;
 
     @PostMapping("/v1/api/disciplinas")
-    public ResponseEntity<Disciplina> addDisciplina(@RequestBody String nome, @RequestBody String nota) {
+    public ResponseEntity<Disciplina> addDisciplina(@RequestParam(value = "nome") String nome, @RequestParam(value = "nota") String nota) {
 
         System.out.println("Entrou no metodo");
         idUnico += 1;
