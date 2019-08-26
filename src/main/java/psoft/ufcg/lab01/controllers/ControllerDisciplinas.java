@@ -18,8 +18,22 @@ public class ControllerDisciplinas {
     @PostMapping("/v1/api/disciplinas")
     public ResponseEntity<Disciplina> addDisciplina(@RequestParam(value = "nome") String nome, @RequestParam(value = "nota") String nota) {
 
-        System.out.println("Entrou no metodo");
         idUnico += 1;
-        return new ResponseEntity<Disciplina>(serviceDisciplinas.addDisciplina(nome,idUnico,Double.parseDouble(nota)), HttpStatus.CREATED);
+        return new ResponseEntity<Disciplina>(serviceDisciplinas.addDisciplina(nome,idUnico,Double.parseDouble(nota)), HttpStatus.OK);
+    }
+
+    @RequestMapping("/v1/api/disciplinas/{id}")
+    @ResponseBody
+    public ResponseEntity<Disciplina> buscarDisciplina(@PathVariable("id") String id) {
+
+        String idUnico = id.substring(1, id.length() - 1);
+        if(serviceDisciplinas.containsDisciplina(Integer.parseInt(idUnico))) {
+
+            return new ResponseEntity<Disciplina>(serviceDisciplinas.buscarDisciplina(Integer.parseInt(idUnico)), HttpStatus.OK);
+        }
+        else {
+
+            return new ResponseEntity<Disciplina>(HttpStatus.NOT_FOUND);
+        }
     }
 }

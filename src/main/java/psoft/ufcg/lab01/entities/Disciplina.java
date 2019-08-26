@@ -4,16 +4,20 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 
 public class Disciplina {
 
-    private String nome;
     private int id;
+    private String nome;
     private double nota;
 
     @JsonCreator
-    public Disciplina(String nome, int id, double nota) {
+    public Disciplina(int id, String nome, double nota) {
 
         this.nome = nome;
         this.id = id;
         this.nota = nota;
+    }
+
+    public Disciplina() {
+
     }
 
     public String getNome() {
